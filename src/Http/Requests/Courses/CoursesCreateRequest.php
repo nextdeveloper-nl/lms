@@ -13,10 +13,10 @@ class CoursesCreateRequest extends AbstractFormRequest
     public function rules()
     {
         return [
-            'course'             => 'required|string|max:500',
-        'abstract'           => 'nullable|string',
-        'description'        => 'nullable|string',
-        'bibliography'       => 'nullable|string',
+            'course' => 'required|string',
+        'abstract' => 'nullable|string',
+        'description' => 'nullable|string',
+        'bibliography' => 'nullable|string',
         'common_category_id' => 'required|exists:common_categories,uuid|uuid',
         ];
     }

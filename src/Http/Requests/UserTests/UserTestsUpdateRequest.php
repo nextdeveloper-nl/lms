@@ -13,7 +13,7 @@ class UserTestsUpdateRequest extends AbstractFormRequest
     public function rules()
     {
         return [
-            'lms_test_id'    => 'nullable|exists:lms_tests,uuid|uuid',
+            'lms_test_id' => 'nullable|exists:lms_tests,uuid|uuid',
         ];
     }
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE

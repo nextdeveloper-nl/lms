@@ -12,9 +12,18 @@ use NextDeveloper\Commons\Common\Cache\Traits\CleanCache;
 use NextDeveloper\Commons\Database\Traits\Taggable;
 
 /**
- * Class HomeworkAnswers.
+ * HomeworkAnswers model.
  *
- * @package NextDeveloper\LMS\Database\Models
+ * @package  NextDeveloper\LMS\Database\Models
+ * @property integer $id
+ * @property string $uuid
+ * @property integer $iam_account_id
+ * @property integer $iam_user_id
+ * @property integer $lms_homework_id
+ * @property string $answer
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class HomeworkAnswers extends Model
 {
@@ -31,6 +40,13 @@ class HomeworkAnswers extends Model
      @var array
      */
     protected $guarded = [];
+
+    protected $fillable = [
+            'iam_account_id',
+            'iam_user_id',
+            'lms_homework_id',
+            'answer',
+    ];
 
     /**
       Here we have the fulltext fields. We can use these for fulltext search if enabled.
@@ -52,13 +68,12 @@ class HomeworkAnswers extends Model
      @var array
      */
     protected $casts = [
-    'id'              => 'integer',
-    'uuid'            => 'string',
+    'id' => 'integer',
     'lms_homework_id' => 'integer',
-    'answer'          => 'string',
-    'created_at'      => 'datetime',
-    'updated_at'      => 'datetime',
-    'deleted_at'      => 'datetime',
+    'answer' => 'string',
+    'created_at' => 'datetime',
+    'updated_at' => 'datetime',
+    'deleted_at' => 'datetime',
     ];
 
     /**
@@ -119,22 +134,9 @@ class HomeworkAnswers extends Model
         }
     }
 
-    public function accounts() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Accounts::class);
-    }
-    
-    public function users() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Users::class);
-    }
-    
-    public function homework() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\LMS\Database\Models\Homework::class);
-    }
-    
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE
+
+
 
 
 }

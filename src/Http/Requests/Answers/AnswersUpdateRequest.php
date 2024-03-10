@@ -14,7 +14,7 @@ class AnswersUpdateRequest extends AbstractFormRequest
     {
         return [
             'lms_question_id' => 'nullable|exists:lms_questions,uuid|uuid',
-        'answers'         => 'nullable|string',
+        'answers' => 'nullable|string',
         ];
     }
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE

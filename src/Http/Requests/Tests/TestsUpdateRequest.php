@@ -13,9 +13,9 @@ class TestsUpdateRequest extends AbstractFormRequest
     public function rules()
     {
         return [
-            'name'           => 'nullable|string|max:500',
-        'abstract'       => 'nullable|string',
-        'description'    => 'nullable|string',
+            'name' => 'nullable|string',
+        'abstract' => 'nullable|string',
+        'description' => 'nullable|string',
         ];
     }
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE

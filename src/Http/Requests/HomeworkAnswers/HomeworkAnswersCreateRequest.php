@@ -14,7 +14,7 @@ class HomeworkAnswersCreateRequest extends AbstractFormRequest
     {
         return [
             'lms_homework_id' => 'required|exists:lms_homeworks,uuid|uuid',
-        'answer'          => 'required|string',
+        'answer' => 'required|string',
         ];
     }
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE

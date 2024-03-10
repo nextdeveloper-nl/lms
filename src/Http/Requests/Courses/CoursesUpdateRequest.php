@@ -13,10 +13,10 @@ class CoursesUpdateRequest extends AbstractFormRequest
     public function rules()
     {
         return [
-            'course'             => 'nullable|string|max:500',
-        'abstract'           => 'nullable|string',
-        'description'        => 'nullable|string',
-        'bibliography'       => 'nullable|string',
+            'course' => 'nullable|string',
+        'abstract' => 'nullable|string',
+        'description' => 'nullable|string',
+        'bibliography' => 'nullable|string',
         'common_category_id' => 'nullable|exists:common_categories,uuid|uuid',
         ];
     }

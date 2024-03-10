@@ -12,9 +12,18 @@ use NextDeveloper\Commons\Common\Cache\Traits\CleanCache;
 use NextDeveloper\Commons\Database\Traits\Taggable;
 
 /**
- * Class Answers.
+ * Answers model.
  *
- * @package NextDeveloper\LMS\Database\Models
+ * @package  NextDeveloper\LMS\Database\Models
+ * @property integer $id
+ * @property string $uuid
+ * @property integer $iam_account_id
+ * @property integer $iam_user_id
+ * @property integer $lms_question_id
+ * @property string $answers
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class Answers extends Model
 {
@@ -31,6 +40,13 @@ class Answers extends Model
      @var array
      */
     protected $guarded = [];
+
+    protected $fillable = [
+            'iam_account_id',
+            'iam_user_id',
+            'lms_question_id',
+            'answers',
+    ];
 
     /**
       Here we have the fulltext fields. We can use these for fulltext search if enabled.
@@ -52,13 +68,12 @@ class Answers extends Model
      @var array
      */
     protected $casts = [
-    'id'              => 'integer',
-    'uuid'            => 'string',
+    'id' => 'integer',
     'lms_question_id' => 'integer',
-    'answers'         => 'string',
-    'created_at'      => 'datetime',
-    'updated_at'      => 'datetime',
-    'deleted_at'      => 'datetime',
+    'answers' => 'string',
+    'created_at' => 'datetime',
+    'updated_at' => 'datetime',
+    'deleted_at' => 'datetime',
     ];
 
     /**
@@ -119,22 +134,9 @@ class Answers extends Model
         }
     }
 
-    public function accounts() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Accounts::class);
-    }
-    
-    public function users() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Users::class);
-    }
-    
-    public function questions() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\LMS\Database\Models\Questions::class);
-    }
-    
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE
+
+
 
 
 }

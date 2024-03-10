@@ -4,7 +4,7 @@ namespace NextDeveloper\LMS\Database\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
 use NextDeveloper\Commons\Database\Filters\AbstractQueryFilter;
-            
+        
 
 /**
  * This class automatically puts where clause on database so that use can filter
@@ -12,6 +12,7 @@ use NextDeveloper\Commons\Database\Filters\AbstractQueryFilter;
  */
 class HomeworkQueryFilter extends AbstractQueryFilter
 {
+
     /**
      * @var Builder
      */
@@ -32,32 +33,32 @@ class HomeworkQueryFilter extends AbstractQueryFilter
         return $this->builder->where('homework', 'like', '%' . $value . '%');
     }
 
-    public function createdAtStart($date) 
+    public function createdAtStart($date)
     {
         return $this->builder->where('created_at', '>=', $date);
     }
 
-    public function createdAtEnd($date) 
+    public function createdAtEnd($date)
     {
         return $this->builder->where('created_at', '<=', $date);
     }
 
-    public function updatedAtStart($date) 
+    public function updatedAtStart($date)
     {
         return $this->builder->where('updated_at', '>=', $date);
     }
 
-    public function updatedAtEnd($date) 
+    public function updatedAtEnd($date)
     {
         return $this->builder->where('updated_at', '<=', $date);
     }
 
-    public function deletedAtStart($date) 
+    public function deletedAtStart($date)
     {
         return $this->builder->where('deleted_at', '>=', $date);
     }
 
-    public function deletedAtEnd($date) 
+    public function deletedAtEnd($date)
     {
         return $this->builder->where('deleted_at', '<=', $date);
     }
@@ -77,15 +78,6 @@ class HomeworkQueryFilter extends AbstractQueryFilter
 
         if($iamUser) {
             return $this->builder->where('iam_user_id', '=', $iamUser->id);
-        }
-    }
-
-    public function lmsQuestionId($value)
-    {
-            $lmsQuestion = \NextDeveloper\LMS\Database\Models\Questions::where('uuid', $value)->first();
-
-        if($lmsQuestion) {
-            return $this->builder->where('lms_question_id', '=', $lmsQuestion->id);
         }
     }
 

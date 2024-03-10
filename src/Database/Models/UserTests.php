@@ -12,9 +12,17 @@ use NextDeveloper\Commons\Common\Cache\Traits\CleanCache;
 use NextDeveloper\Commons\Database\Traits\Taggable;
 
 /**
- * Class UserTests.
+ * UserTests model.
  *
- * @package NextDeveloper\LMS\Database\Models
+ * @package  NextDeveloper\LMS\Database\Models
+ * @property integer $id
+ * @property string $uuid
+ * @property integer $iam_account_id
+ * @property integer $iam_user_id
+ * @property integer $lms_test_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class UserTests extends Model
 {
@@ -31,6 +39,12 @@ class UserTests extends Model
      @var array
      */
     protected $guarded = [];
+
+    protected $fillable = [
+            'iam_account_id',
+            'iam_user_id',
+            'lms_test_id',
+    ];
 
     /**
       Here we have the fulltext fields. We can use these for fulltext search if enabled.
@@ -52,12 +66,11 @@ class UserTests extends Model
      @var array
      */
     protected $casts = [
-    'id'             => 'integer',
-    'uuid'           => 'string',
-    'lms_test_id'    => 'integer',
-    'created_at'     => 'datetime',
-    'updated_at'     => 'datetime',
-    'deleted_at'     => 'datetime',
+    'id' => 'integer',
+    'lms_test_id' => 'integer',
+    'created_at' => 'datetime',
+    'updated_at' => 'datetime',
+    'deleted_at' => 'datetime',
     ];
 
     /**
@@ -118,20 +131,7 @@ class UserTests extends Model
         }
     }
 
-    public function accounts() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Accounts::class);
-    }
-    
-    public function users() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Users::class);
-    }
-    
-    public function tests() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\LMS\Database\Models\Tests::class);
-    }
-    
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE
+
+
 }

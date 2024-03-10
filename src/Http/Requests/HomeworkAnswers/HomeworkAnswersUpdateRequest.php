@@ -14,7 +14,7 @@ class HomeworkAnswersUpdateRequest extends AbstractFormRequest
     {
         return [
             'lms_homework_id' => 'nullable|exists:lms_homeworks,uuid|uuid',
-        'answer'          => 'nullable|string',
+        'answer' => 'nullable|string',
         ];
     }
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE

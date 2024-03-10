@@ -12,9 +12,19 @@ use NextDeveloper\Commons\Common\Cache\Traits\CleanCache;
 use NextDeveloper\Commons\Database\Traits\Taggable;
 
 /**
- * Class Tests.
+ * Tests model.
  *
- * @package NextDeveloper\LMS\Database\Models
+ * @package  NextDeveloper\LMS\Database\Models
+ * @property integer $id
+ * @property string $uuid
+ * @property integer $iam_account_id
+ * @property integer $iam_user_id
+ * @property string $name
+ * @property string $abstract
+ * @property string $description
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class Tests extends Model
 {
@@ -31,6 +41,14 @@ class Tests extends Model
      @var array
      */
     protected $guarded = [];
+
+    protected $fillable = [
+            'iam_account_id',
+            'iam_user_id',
+            'name',
+            'abstract',
+            'description',
+    ];
 
     /**
       Here we have the fulltext fields. We can use these for fulltext search if enabled.
@@ -52,14 +70,13 @@ class Tests extends Model
      @var array
      */
     protected $casts = [
-    'id'             => 'integer',
-    'uuid'           => 'string',
-    'name'           => 'string',
-    'abstract'       => 'string',
-    'description'    => 'string',
-    'created_at'     => 'datetime',
-    'updated_at'     => 'datetime',
-    'deleted_at'     => 'datetime',
+    'id' => 'integer',
+    'name' => 'string',
+    'abstract' => 'string',
+    'description' => 'string',
+    'created_at' => 'datetime',
+    'updated_at' => 'datetime',
+    'deleted_at' => 'datetime',
     ];
 
     /**
@@ -120,25 +137,7 @@ class Tests extends Model
         }
     }
 
-    public function questions() : \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(\NextDeveloper\LMS\Database\Models\Questions::class);
-    }
-
-    public function accounts() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Accounts::class);
-    }
-    
-    public function users() : \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(\NextDeveloper\IAM\Database\Models\Users::class);
-    }
-    
-    public function userTests() : \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(\NextDeveloper\LMS\Database\Models\UserTests::class);
-    }
-
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE
+
+
 }

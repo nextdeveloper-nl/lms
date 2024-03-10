@@ -14,7 +14,7 @@ class AnswersCreateRequest extends AbstractFormRequest
     {
         return [
             'lms_question_id' => 'required|exists:lms_questions,uuid|uuid',
-        'answers'         => 'required|string',
+        'answers' => 'required|string',
         ];
     }
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE
