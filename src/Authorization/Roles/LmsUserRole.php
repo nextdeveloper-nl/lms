@@ -11,13 +11,13 @@ use NextDeveloper\IAM\Authorization\Roles\IAuthorizationRole;
 use NextDeveloper\IAM\Database\Models\Users;
 use NextDeveloper\IAM\Helpers\UserHelper;
 
-class LmsAdminRole extends AbstractRole implements IAuthorizationRole
+class LmsUserRole extends AbstractRole implements IAuthorizationRole
 {
-    public const NAME = 'lms-admin';
+    public const NAME = 'lms-user';
 
-    public const LEVEL = 100;
+    public const LEVEL = 150;
 
-    public const DESCRIPTION = 'LMS Admin';
+    public const DESCRIPTION = 'Learning management system basic user role. This role allows user to see items in the LMS service.';
 
     public const DB_PREFIX = 'lms';
 
@@ -33,11 +33,6 @@ class LmsAdminRole extends AbstractRole implements IAuthorizationRole
         /**
          * Here user will be able to list all models, because by default, sales manager can see everybody.
          */
-        $ids = AccountManagers::withoutGlobalScopes()
-            ->where('iam_account_id', UserHelper::currentAccount()->id)
-            ->pluck('crm_account_id');
-
-        $builder->whereIn('iam_account_id', $ids);
     }
 
     public function checkPrivileges(Users $users = null)
@@ -54,29 +49,15 @@ class LmsAdminRole extends AbstractRole implements IAuthorizationRole
     {
         return [
             'lms_answers:read',
-            'lms_answers:update',
-            'lms_answers:create',
-            'lms_answers:delete',
             'lms_courses:read',
-            'lms_courses:update',
-            'lms_courses:create',
-            'lms_courses:delete',
             'lms_homework:read',
             'lms_homework:update',
             'lms_homework:create',
-            'lms_homework:delete',
             'lms_homework_answers:read',
             'lms_homework_answers:update',
             'lms_homework_answers:create',
-            'lms_homework_answers:delete',
             'lms_questions:read',
-            'lms_questions:update',
-            'lms_questions:create',
-            'lms_questions:delete',
             'lms_tests:read',
-            'lms_tests:update',
-            'lms_tests:create',
-            'lms_tests:delete',
             'lms_user_tests:read',
             'lms_user_tests:update',
             'lms_user_tests:create',
