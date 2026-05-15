@@ -5,7 +5,6 @@ namespace NextDeveloper\LMS\Http\Transformers;
 use Illuminate\Support\Facades\Cache;
 use NextDeveloper\Commons\Common\Cache\CacheHelper;
 use NextDeveloper\LMS\Database\Models\Courses;
-use NextDeveloper\Commons\Http\Transformers\AbstractTransformer;
 use NextDeveloper\LMS\Http\Transformers\AbstractTransformers\AbstractCoursesTransformer;
 
 /**

@@ -2,8 +2,8 @@
 
 namespace NextDeveloper\LMS\EventHandlers\AnswersUpdatedEvent;
 
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 
 /**
  * Class AnswersUpdatedEvent

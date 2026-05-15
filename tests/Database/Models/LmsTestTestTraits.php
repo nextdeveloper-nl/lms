@@ -2,14 +2,13 @@
 
 namespace NextDeveloper\LMS\Tests\Database\Models;
 
-use Tests\TestCase;
 use GuzzleHttp\Client;
-use Illuminate\Http\Response;
 use Illuminate\Http\Request;
-use NextDeveloper\LMS\Database\Filters\LmsTestQueryFilter;
-use NextDeveloper\LMS\Services\AbstractServices\AbstractLmsTestService;
+use Illuminate\Http\Response;
 use Illuminate\Pagination\LengthAwarePaginator;
 use League\Fractal\Resource\Collection;
+use NextDeveloper\LMS\Database\Filters\LmsTestQueryFilter;
+use NextDeveloper\LMS\Services\AbstractServices\AbstractLmsTestService;
 
 trait LmsTestTestTraits
 {

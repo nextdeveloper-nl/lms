@@ -2,8 +2,8 @@
 
 namespace NextDeveloper\LMS\EventHandlers\UserTestsCreatingEvent;
 
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 
 /**
  * Class UserTestsCreatingEvent

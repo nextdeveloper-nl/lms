@@ -3,14 +3,16 @@
 namespace NextDeveloper\LMS\Http\Controllers\Questions;
 
 use Illuminate\Http\Request;
-use NextDeveloper\LMS\Http\Controllers\AbstractController;
+use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\Commons\Http\Traits\Tags;
 use NextDeveloper\Generator\Http\Traits\ResponsableFactory;
-use NextDeveloper\LMS\Http\Requests\Questions\QuestionsUpdateRequest;
 use NextDeveloper\LMS\Database\Filters\QuestionsQueryFilter;
 use NextDeveloper\LMS\Database\Models\Questions;
-use NextDeveloper\LMS\Services\QuestionsService;
+use NextDeveloper\LMS\Http\Controllers\AbstractController;
 use NextDeveloper\LMS\Http\Requests\Questions\QuestionsCreateRequest;
-use NextDeveloper\Commons\Http\Traits\Tags;use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\LMS\Http\Requests\Questions\QuestionsUpdateRequest;
+use NextDeveloper\LMS\Services\QuestionsService;
+
 class QuestionsController extends AbstractController
 {
     private $model = Questions::class;

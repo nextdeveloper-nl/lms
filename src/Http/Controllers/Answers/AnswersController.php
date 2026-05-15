@@ -3,14 +3,16 @@
 namespace NextDeveloper\LMS\Http\Controllers\Answers;
 
 use Illuminate\Http\Request;
-use NextDeveloper\LMS\Http\Controllers\AbstractController;
+use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\Commons\Http\Traits\Tags;
 use NextDeveloper\Generator\Http\Traits\ResponsableFactory;
-use NextDeveloper\LMS\Http\Requests\Answers\AnswersUpdateRequest;
 use NextDeveloper\LMS\Database\Filters\AnswersQueryFilter;
 use NextDeveloper\LMS\Database\Models\Answers;
-use NextDeveloper\LMS\Services\AnswersService;
+use NextDeveloper\LMS\Http\Controllers\AbstractController;
 use NextDeveloper\LMS\Http\Requests\Answers\AnswersCreateRequest;
-use NextDeveloper\Commons\Http\Traits\Tags;use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\LMS\Http\Requests\Answers\AnswersUpdateRequest;
+use NextDeveloper\LMS\Services\AnswersService;
+
 class AnswersController extends AbstractController
 {
     private $model = Answers::class;

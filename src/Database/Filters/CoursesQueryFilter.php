@@ -4,7 +4,7 @@ namespace NextDeveloper\LMS\Database\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
 use NextDeveloper\Commons\Database\Filters\AbstractQueryFilter;
-            
+
 
 /**
  * This class automatically puts where clause on database so that use can filter
@@ -17,25 +17,25 @@ class CoursesQueryFilter extends AbstractQueryFilter
      * @var Builder
      */
     protected $builder;
-    
+
     public function course($value)
     {
-        return $this->builder->where('course', 'like', '%' . $value . '%');
+        return $this->builder->where('course', 'ilike', '%' . $value . '%');
     }
-    
+
     public function abstract($value)
     {
-        return $this->builder->where('abstract', 'like', '%' . $value . '%');
+        return $this->builder->where('abstract', 'ilike', '%' . $value . '%');
     }
-    
+
     public function description($value)
     {
-        return $this->builder->where('description', 'like', '%' . $value . '%');
+        return $this->builder->where('description', 'ilike', '%' . $value . '%');
     }
-    
+
     public function bibliography($value)
     {
-        return $this->builder->where('bibliography', 'like', '%' . $value . '%');
+        return $this->builder->where('bibliography', 'ilike', '%' . $value . '%');
     }
 
     public function createdAtStart($date)
@@ -96,4 +96,10 @@ class CoursesQueryFilter extends AbstractQueryFilter
     }
 
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE
+
+
+
+
+
+
 }

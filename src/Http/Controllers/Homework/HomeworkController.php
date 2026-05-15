@@ -3,14 +3,16 @@
 namespace NextDeveloper\LMS\Http\Controllers\Homework;
 
 use Illuminate\Http\Request;
-use NextDeveloper\LMS\Http\Controllers\AbstractController;
+use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\Commons\Http\Traits\Tags;
 use NextDeveloper\Generator\Http\Traits\ResponsableFactory;
-use NextDeveloper\LMS\Http\Requests\Homework\HomeworkUpdateRequest;
 use NextDeveloper\LMS\Database\Filters\HomeworkQueryFilter;
 use NextDeveloper\LMS\Database\Models\Homework;
-use NextDeveloper\LMS\Services\HomeworkService;
+use NextDeveloper\LMS\Http\Controllers\AbstractController;
 use NextDeveloper\LMS\Http\Requests\Homework\HomeworkCreateRequest;
-use NextDeveloper\Commons\Http\Traits\Tags;use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\LMS\Http\Requests\Homework\HomeworkUpdateRequest;
+use NextDeveloper\LMS\Services\HomeworkService;
+
 class HomeworkController extends AbstractController
 {
     private $model = Homework::class;

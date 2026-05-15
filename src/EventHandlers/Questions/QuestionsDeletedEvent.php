@@ -2,8 +2,8 @@
 
 namespace NextDeveloper\LMS\EventHandlers\QuestionsDeletedEvent;
 
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 
 /**
  * Class QuestionsDeletedEvent

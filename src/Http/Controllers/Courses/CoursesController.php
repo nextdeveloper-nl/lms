@@ -3,14 +3,16 @@
 namespace NextDeveloper\LMS\Http\Controllers\Courses;
 
 use Illuminate\Http\Request;
-use NextDeveloper\LMS\Http\Controllers\AbstractController;
+use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\Commons\Http\Traits\Tags;
 use NextDeveloper\Generator\Http\Traits\ResponsableFactory;
-use NextDeveloper\LMS\Http\Requests\Courses\CoursesUpdateRequest;
 use NextDeveloper\LMS\Database\Filters\CoursesQueryFilter;
 use NextDeveloper\LMS\Database\Models\Courses;
-use NextDeveloper\LMS\Services\CoursesService;
+use NextDeveloper\LMS\Http\Controllers\AbstractController;
 use NextDeveloper\LMS\Http\Requests\Courses\CoursesCreateRequest;
-use NextDeveloper\Commons\Http\Traits\Tags;use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\LMS\Http\Requests\Courses\CoursesUpdateRequest;
+use NextDeveloper\LMS\Services\CoursesService;
+
 class CoursesController extends AbstractController
 {
     private $model = Courses::class;

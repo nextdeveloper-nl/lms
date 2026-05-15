@@ -2,17 +2,15 @@
 
 namespace NextDeveloper\LMS\Services\AbstractServices;
 
-use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Str;
-use NextDeveloper\IAM\Helpers\UserHelper;
-use NextDeveloper\Commons\Common\Cache\CacheHelper;
-use NextDeveloper\Commons\Helpers\DatabaseHelper;
-use NextDeveloper\LMS\Database\Models\UserTests;
-use NextDeveloper\LMS\Database\Filters\UserTestsQueryFilter;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 use NextDeveloper\Commons\Exceptions\ModelNotFoundException;
+use NextDeveloper\Commons\Helpers\DatabaseHelper;
 use NextDeveloper\Events\Services\Events;
+use NextDeveloper\IAM\Helpers\UserHelper;
+use NextDeveloper\LMS\Database\Filters\UserTestsQueryFilter;
+use NextDeveloper\LMS\Database\Models\UserTests;
 
 /**
  * This class is responsible from managing the data for UserTests
@@ -145,7 +143,7 @@ class AbstractUserTestsService
                 $data['lms_test_id']
             );
         }
-    
+
         if(!array_key_exists('iam_account_id', $data)) {
             $data['iam_account_id'] = UserHelper::currentAccount()->id;
         }
@@ -212,7 +210,7 @@ class AbstractUserTestsService
                 $data['lms_test_id']
             );
         }
-    
+
         Events::fire('updating:NextDeveloper\LMS\UserTests', $model);
 
         try {

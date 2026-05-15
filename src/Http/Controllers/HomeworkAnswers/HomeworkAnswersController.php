@@ -3,14 +3,16 @@
 namespace NextDeveloper\LMS\Http\Controllers\HomeworkAnswers;
 
 use Illuminate\Http\Request;
-use NextDeveloper\LMS\Http\Controllers\AbstractController;
+use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\Commons\Http\Traits\Tags;
 use NextDeveloper\Generator\Http\Traits\ResponsableFactory;
-use NextDeveloper\LMS\Http\Requests\HomeworkAnswers\HomeworkAnswersUpdateRequest;
 use NextDeveloper\LMS\Database\Filters\HomeworkAnswersQueryFilter;
 use NextDeveloper\LMS\Database\Models\HomeworkAnswers;
-use NextDeveloper\LMS\Services\HomeworkAnswersService;
+use NextDeveloper\LMS\Http\Controllers\AbstractController;
 use NextDeveloper\LMS\Http\Requests\HomeworkAnswers\HomeworkAnswersCreateRequest;
-use NextDeveloper\Commons\Http\Traits\Tags;use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\LMS\Http\Requests\HomeworkAnswers\HomeworkAnswersUpdateRequest;
+use NextDeveloper\LMS\Services\HomeworkAnswersService;
+
 class HomeworkAnswersController extends AbstractController
 {
     private $model = HomeworkAnswers::class;

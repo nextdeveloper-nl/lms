@@ -3,14 +3,16 @@
 namespace NextDeveloper\LMS\Http\Controllers\UserTests;
 
 use Illuminate\Http\Request;
-use NextDeveloper\LMS\Http\Controllers\AbstractController;
+use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\Commons\Http\Traits\Tags;
 use NextDeveloper\Generator\Http\Traits\ResponsableFactory;
-use NextDeveloper\LMS\Http\Requests\UserTests\UserTestsUpdateRequest;
 use NextDeveloper\LMS\Database\Filters\UserTestsQueryFilter;
 use NextDeveloper\LMS\Database\Models\UserTests;
-use NextDeveloper\LMS\Services\UserTestsService;
+use NextDeveloper\LMS\Http\Controllers\AbstractController;
 use NextDeveloper\LMS\Http\Requests\UserTests\UserTestsCreateRequest;
-use NextDeveloper\Commons\Http\Traits\Tags;use NextDeveloper\Commons\Http\Traits\Addresses;
+use NextDeveloper\LMS\Http\Requests\UserTests\UserTestsUpdateRequest;
+use NextDeveloper\LMS\Services\UserTestsService;
+
 class UserTestsController extends AbstractController
 {
     private $model = UserTests::class;

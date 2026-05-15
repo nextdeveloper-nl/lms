@@ -4,7 +4,7 @@ namespace NextDeveloper\LMS\Database\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
 use NextDeveloper\Commons\Database\Filters\AbstractQueryFilter;
-            
+
 
 /**
  * This class automatically puts where clause on database so that use can filter
@@ -17,10 +17,10 @@ class AnswersQueryFilter extends AbstractQueryFilter
      * @var Builder
      */
     protected $builder;
-    
+
     public function answers($value)
     {
-        return $this->builder->where('answers', 'like', '%' . $value . '%');
+        return $this->builder->where('answers', 'ilike', '%' . $value . '%');
     }
 
     public function createdAtStart($date)
@@ -81,4 +81,10 @@ class AnswersQueryFilter extends AbstractQueryFilter
     }
 
     // EDIT AFTER HERE - WARNING: ABOVE THIS LINE MAY BE REGENERATED AND YOU MAY LOSE CODE
+
+
+
+
+
+
 }
